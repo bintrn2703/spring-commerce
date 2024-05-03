@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>SpringCommerce</title>
+    <link rel="icon" href="/logo/logo.png">
+    <style>
+        .table td{
+            text-align: center;
+            vertical-align: middle;
+        }
+        .table .thead-dark th{
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<div id="header" th:replace="layout/header :: header"></div>
+
+<div class="container text-center mx-auto mt-5">
+    <h1>ĐƠN HÀNG: <span th:text="${order.id}"></span>, ĐẶT LÚC --- <span th:text="${order.createDate}"></span></h1>
+</div>
+<div class="container">
+    <h2 class="title-customers">Đơn hàng sản phẩm</h2>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col" class="text-center ">Sản phẩm</th>
+            <th scope="col" class="text-center ">Mã sản phẩm</th>
+            <th scope="col" class="text-center ">Giá</th>
+            <th scope="col" class="text-center ">Số lượng</th>
+            <th scope="col" class="text-center ">Tổng cộng</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="orderItem, iStat : ${orderItems}">
+            <td>
+                <center><a th:href="@{/shop/viewproduct/{id}(id=${orderItem.product.id})}" th:text="${orderItem.product.name}" title="Sản phẩm">Mạch cấp nguồn DC-DC Power Supply 3.3VDC 5VDC ASM1117 - Default Title</a></center> <br>
+            </td>
+            <td><center th:text="${orderItem.product.id}">DC-DC Power Supply 3.3VDC 5VDC ASM1117</center></td>
+            <td class="text-right "><center th:text="${orderItem.product.price}">13,000₫</center></td>
+            <td class="text-center "><center th:text="${orderItem.quantity}">1</center></td>
+            <td class="text-right "><center th:text="${orderItem.quantity*orderItem.product.price}">13,000₫</center></td>
+        </tr>
+        <tr class="order_summary">
+            <td colspan="4" class="text-center "><b>Giá sản phẩm</b></td>
+            <td class="text-right"><b><center th:text="${order.order_total}">41,000₫</center></b></td>
+        </tr>
+        <tr class="order_summary">
+            <td colspan="4" class="text-center "><b>Chuyển phát nhanh GHN</b></td>
+            <td class="text-right"><b><center>0</center></b></td>
+        </tr>
+        <tr class="order_summary order_total">
+            <td colspan="4" class="text-center "><b>Tổng tiền</b></td>
+            <td class="text-right"><b><center th:text="${order.order_total}">66,000₫</center></b></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="footer" th:replace="layout/footer :: footer"></div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

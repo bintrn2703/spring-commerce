@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<!--    google font roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+    <title>SpringCommerce</title>
+    <link rel="icon" href="/logo/logo.png">
+    <style>
+        body,html{ /*/reset css*/
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        imagelogin::before { /*tạo lớp phủ*/
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* màu sắc của lớp phủ mờ */
+            z-index: 4;
+        }
+        .wherelogo{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 9999;
+        }
+        #side_left{
+            margin-top: 15vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wherelogo d-flex align-items-center" style="background-color: black; width: 100%">
+    <a class="navbar-brand" th:href="@{/}" href="#">
+        <img th:src="@{/logo/logo.png}" src="../static/logo/logo1.jpg" width="auto" height="36" alt="logo"/>
+    </a>
+</div>
+
+<div class="container-fluid" >
+<!--    <div class="row h-100" >-->
+        <div id="side_left"  style="margin-left: 450px;margin-right: 450px">
+            <div class="border-0 rounded p-4 box-shadow">
+                <h2 class="text-center mb-4">Đăng nhập</h2>
+                <form th:action="@{/login}" method="post">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Nhập Email" class="form-control form-control-lg">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" class="form-control form-control-lg" placeholder="Nhập mật khẩu" name="password" id="password">
+                    </div>
+                    <div th:if="${param.error}" class="alert alert-danger">
+                        Invalid Email or Password.
+                    </div>
+                    <div class="form-group">
+                        <button type="submit"  class="btn btn-secondary btn-block">Đăng nhập</button>
+                    </div>
+                </form>
+                <div class="text-center">
+                    <span>Bạn chưa có tài khoản?</span>
+                    <a class="linkControl" href="./register.html" th:href="@{/register}">Đăng ký</a>
+                    <br>
+                    <a href="" th:href="@{/forgotpassword}">Quên mật khẩu?</a>
+                </div>
+                <!--<div class="text-center mt-4">
+                    <hr>
+                    <span class="px-2 d-inline " style="font-family: Tahoma">HOẶC</span>
+                    <hr>
+                    <a href="/oauth2/authorization/google" class="btn btn-block btn-outline-dark">Đăng nhập với Google</a>
+                </div>-->
+            </div>
+        </div>
+        <!--<div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="backgroundAuth imagelogin"></div>
+            <style>
+                .backgroundAuth {
+                    background-image: url("/images/backgroundAuth.png");
+                    height: 100%;
+                    width: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    box-shadow: -5px -5px 15px #7b7b7bcc;
+                    /*border-radius: 15px !important;*/
+                }
+                @media (max-width: 767px) {
+                    .backgroundAuth {
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        z-index: -2;
+                        border-radius: 0px !important;
+                    }
+                    .backgroundAuth::before { /*tạo lớp phủ*/
+                        content: "";
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.5); /* màu sắc của lớp phủ mờ */
+                        z-index: -1;
+                    }
+                    *{
+                        color:white;
+                    }
+                    hr{
+                        background-color: white;
+                    }
+                    a.btn{
+                        color:white;
+                        border-color: white;
+                    }
+                    span{background-color: #fff0 !important;}
+                }
+            </style>
+        </div>-->
+<!--    </div>-->
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>

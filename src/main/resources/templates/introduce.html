@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>SpringCommerce</title>
+    <link rel="icon" href="/logo/logo.png">
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="header" th:replace="layout/header :: header"></div>
+
+<div class="container mt-5">
+    <h2 class="text-center">Sản phẩm nổi bật</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/productImages/iphone11-select-2019-family.png" alt="Card image cap" width="350px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Điện thoại Samsung Galaxy S20</h5>
+                    <p class="card-text">Giá chỉ từ 20 triệu đồng</p>
+                    <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/productImages/iphone-12-mini-select-2020.jpg" alt="Card image cap" width="350px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Laptop Dell XPS 15</h5>
+                    <p class="card-text">Giảm giá 10% cho khách hàng mới</p>
+                    <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/productImages/iphone-se-family-select-2020.jpg" alt="Card image cap" width="350px" height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">Tai nghe không dây Apple AirPods Pro</h5>
+                    <p class="card-text">Giá chỉ từ 5 triệu đồng</p>
+                    <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2 class="text-center">Chương trình khuyến mãi</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Giảm giá 20% cho sản phẩm Apple</h5>
+                    <p class="card-text">Áp dụng cho khách hàng mới đăng ký và mua hàng trên website</p>
+                    <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Mua sản phẩm Samsung tặng quà trị giá 1 triệu đồng</h5>
+                    <p class="card-text">Áp dụng cho khách hàng mua hàng trên website trong tháng này</p>
+                    <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer" th:replace="layout/footer :: footer"></div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
