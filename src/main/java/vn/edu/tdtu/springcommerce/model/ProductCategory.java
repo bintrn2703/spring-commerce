@@ -2,7 +2,7 @@ package vn.edu.tdtu.springcommerce.model;
 
 import lombok.Data;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "product_category")

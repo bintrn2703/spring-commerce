@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <title>SpringCommerce</title>
-  <link rel="icon" href="/logo/logo.png">
+  <link rel="icon" href="/logo/favicon.png">
   <style>
     .carousel-inner img {
       width: 100%;
@@ -25,7 +25,7 @@
 
 <div class="container my-4">
   <div class="customer_order">
-    <h1 class="title-customers">Tài khoản của bạn</h1>
+    <h1 class="title-customers">Danh sách đơn hàng</h1>
       <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -47,7 +47,7 @@
             <td th:text="${order.createDate}">ngay dat</td>
             <td th:text="${order.order_status}">Trang thai</td>
             <td>COD</td>
-            <td ><span th:text="${order.order_total}"></span>$</td>
+            <td ><span th:text="'$' + ${order.order_total}"></span></td>
           </tr>
         </tbody>
       </table>

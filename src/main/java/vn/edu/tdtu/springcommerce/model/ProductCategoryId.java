@@ -1,6 +1,6 @@
 package vn.edu.tdtu.springcommerce.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Embeddable

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 

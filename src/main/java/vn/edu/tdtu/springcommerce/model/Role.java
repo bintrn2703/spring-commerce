@@ -2,8 +2,8 @@ package vn.edu.tdtu.springcommerce.model;
 
 import lombok.Data;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Entity

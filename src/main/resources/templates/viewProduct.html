@@ -17,18 +17,23 @@
 
 <div id="header" th:replace="layout/header :: header"></div>
 
-<div class="container mt-5 mb-5"> <div class="row"> <div class="col-md-5 d-flex justify-content-center"> <img class="mt-5 img-fluid" th:src="@{${'/productImages/' + product.imageName}}" alt="" height="300" width="300"> </div> <div class="col-md-7 mt-5"> <h2 class="mb-3" th:text="${product.name}"></h2> <h5>Loại sản phẩm:</h5> <ul class="list-unstyled mb-4"> <li th:each="categoryName : ${categoryNameList}" th:text="${categoryName}"></li> </ul>
-    <h2 class="mb-3">Giá: $<span th:text="${product.price}"></span></h2>
-    <h5>Trọng lượng:</h5>
-    <span class="mb-4"><span th:text="${product.weight}"></span> Gram</span>
-    <h5>Mô tả:</h5>
-    <p th:text="${product.description}"></p>
-    <h5>Màu sắc:</h5>
-    <p class="mb-4" th:text="${product.color}"></p>
-    <h5>Thương hiệu:</h5>
-    <p class="mb-4" th:text="${product.brand}"></p>
-    <a th:href="@{/addToCart/{id}(id=${product.id})}" class="btn btn-primary">Thêm vào giỏ hàng</a>
-</div>
+<div class="container mt-5 mb-5">
+    <div class="row"> <div class="col-md-5 d-flex justify-content-center">
+        <img class="mt-5" th:src="@{${'/productImages/' + product.imageName}}" alt="" height="300" width="300">
+    </div>
+    <div class="col-md-7 mt-5"> <h2 class="mb-3" th:text="${product.name}">
+        </h2> <h5>Loại sản phẩm:</h5> <ul class="list-unstyled mb-4"> <li th:each="categoryName : ${categoryNameList}" th:text="${categoryName}"></li> </ul>
+        <h2 class="mb-3">Giá: $<span th:text="${product.price}"></span></h2>
+        <h5>Trọng lượng:</h5>
+        <span class="mb-4"><span th:text="${product.weight}"></span> Gram</span>
+        <h5>Mô tả:</h5>
+        <p th:text="${product.description}"></p>
+        <h5>Màu sắc:</h5>
+        <p class="mb-4" th:text="${product.color}"></p>
+        <h5>Thương hiệu:</h5>
+        <p class="mb-4" th:text="${product.brand}"></p>
+        <a th:href="@{/addToCart/{id}(id=${product.id})}" class="btn btn-primary">Thêm vào giỏ hàng</a>
+    </div>
 </div>
 </div>
 
