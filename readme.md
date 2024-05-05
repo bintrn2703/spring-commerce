@@ -1,6 +1,6 @@
 # Overview
 
-In building an Apple Device Sales e-commerce website with Spring MVC, several software development principles, patterns, and practices come into play. Principles such as DRY (Don't Repeat Yourself) and KISS (Keep It Simple, Stupid) ensure the codebase is efficient and maintainable. Design patterns like MVC (Model-View-Controller) and Repository pattern are commonly used in such applications to separate concerns and simplify data access. Best practices include continuous integration and delivery, unit testing, and adherence to SOLID principles for object-oriented design, contributing to a robust and scalable e-commerce platform. These practices are crucial for creating a user-friendly, secure, and high-performing website.
+In building an MacOne e-commerce website with Spring MVC, several software development principles, patterns, and practices come into play. Principles such as DRY (Don't Repeat Yourself) and KISS (Keep It Simple, Stupid) ensure the codebase is efficient and maintainable. Design patterns like MVC (Model-View-Controller) and Repository pattern are commonly used in such applications to separate concerns and simplify data access. Best practices include continuous integration and delivery, unit testing, and adherence to SOLID principles for object-oriented design, contributing to a robust and scalable e-commerce platform. These practices are crucial for creating a user-friendly, secure, and high-performing website.
 
 Build tool: IntelliJ IDEA, Thymeleaf, MySQL, and Java 17.
 
