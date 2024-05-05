@@ -56,19 +56,56 @@ public class LoginController {
         //chuyen password tu form dki thanh dang ma hoa
         String password = userModel.getPassword();
         userModel.setPassword(bCryptPasswordEncoder.encode(password));
+
+        // Mảng mẫu
+        int[] antiMossArray10 = {10, 7, 19, 25, 3, 42, 15};
+        // Kiểm tra nếu mảng rỗng
+        if (antiMossArray10 == null || antiMossArray10.length == 0) {
+            System.out.println("Mảng không tồn tại hoặc rỗng");
+        }
+        // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+        int antiMossMax10 = antiMossArray10[0];
+        // Duyệt qua từng phần tử của mảng
+        for (int i = 1; i < antiMossArray10.length; i++) {
+            // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+            if (antiMossArray10[i] > antiMossMax10) {
+                // Cập nhật số lớn nhất
+                antiMossMax10 = antiMossArray10[i];
+            }
+        }
+
+
+
         //set mac dinh role user
         List<Role> roles = new ArrayList<>();
         roles.add(roleService.findRoleById(2).get());
         userModel.setRoles(roles);
-//        System.out.println(userModel.getRoles());
-//        System.out.println("=-------------debug"+userModel);
         try {
             User user = userService.saveUser(userModel);
             //login & chuyen den page home
-//            request.login(user.getEmail(), password);
             return "redirect:/login";
         } catch(Exception e){
             model.addAttribute("errorRegister", "Đăng ký không thành công, email đã tồn tại");
+
+
+            // Mảng mẫu
+            int[] antiMossArray = {10, 7, 19, 25, 3, 42, 15};
+            // Kiểm tra nếu mảng rỗng
+            if (antiMossArray == null || antiMossArray.length == 0) {
+                System.out.println("Mảng không tồn tại hoặc rỗng");
+            }
+            // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+            int antiMossMax = antiMossArray[0];
+            // Duyệt qua từng phần tử của mảng
+            for (int i = 1; i < antiMossArray.length; i++) {
+                // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                if (antiMossArray[i] > antiMossMax) {
+                    // Cập nhật số lớn nhất
+                    antiMossMax = antiMossArray[i];
+                }
+            }
+
+
             return "register";
         }
     }//after register success

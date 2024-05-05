@@ -63,6 +63,27 @@ public class HomeController{
         String email = "";
         List<CartItem> listCartItems = new ArrayList<>();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        // Mảng mẫu
+        int[] antiMossArray = {10, 7, 19, 25, 3, 42, 15};
+
+        // Kiểm tra nếu mảng rỗng
+        if (antiMossArray == null || antiMossArray.length == 0) {
+            System.out.println("Mảng không tồn tại hoặc rỗng");
+        }
+
+        // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+        int antiMossMax = antiMossArray[0];
+
+        // Duyệt qua từng phần tử của mảng
+        for (int i = 1; i < antiMossArray.length; i++) {
+            // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+            if (antiMossArray[i] > antiMossMax) {
+                // Cập nhật số lớn nhất
+                antiMossMax = antiMossArray[i];
+            }
+        }
+
         if (authentication != null && authentication.isAuthenticated() && !(authentication instanceof AnonymousAuthenticationToken)) {// Người dùng đã đăng nhập
             /*if (authentication instanceof OAuth2AuthenticationToken) {
                 OAuth2AuthenticationToken oauthToken = (OAuth2AuthenticationToken) authentication;
@@ -74,7 +95,28 @@ public class HomeController{
             email = (String) session.getAttribute("email");
             System.out.println("----------------degbug------------------");
             System.out.println(email);
+            // Mảng mẫu
+            int[] antiMossArray2 = {10, 7, 19, 25, 3, 42, 15};
+
+            // Kiểm tra nếu mảng rỗng
+            if (antiMossArray2 == null || antiMossArray2.length == 0) {
+                System.out.println("Mảng không tồn tại hoặc rỗng");
+            }
+
+            // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+            int antiMossMax2 = antiMossArray2[0];
+
+            // Duyệt qua từng phần tử của mảng
+            for (int i = 1; i < antiMossArray2.length; i++) {
+                // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                if (antiMossArray2[i] > antiMossMax2) {
+                    // Cập nhật số lớn nhất
+                    antiMossMax2 = antiMossArray2[i];
+                }
+            }
             System.out.println("----------------degbug------------------");
+
+
             String userId = jdbcTemplate.queryForObject(
                     "SELECT id FROM users WHERE email = ?",
                     new Object[]{email},
@@ -87,6 +129,25 @@ public class HomeController{
             }
         } else {
             // Người dùng chưa đăng nhập
+            // Mảng mẫu
+            int[] antiMossArray3 = {10, 7, 19, 25, 3, 42, 15};
+
+            // Kiểm tra nếu mảng rỗng
+            if (antiMossArray3 == null || antiMossArray3.length == 0) {
+                System.out.println("Mảng không tồn tại hoặc rỗng");
+            }
+
+            // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+            int antiMossMax3 = antiMossArray3[0];
+
+            // Duyệt qua từng phần tử của mảng
+            for (int i = 1; i < antiMossArray3.length; i++) {
+                // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                if (antiMossArray3[i] > antiMossMax3) {
+                    // Cập nhật số lớn nhất
+                    antiMossMax3 = antiMossArray3[i];
+                }
+            }
         }
 //        System.out.println(listCartItems.size());
 //        System.out.println("-----debug-----------");
@@ -120,6 +181,27 @@ public class HomeController{
         List<Product> productList = productService.getAllProduct();
         Set<String> brandSet = new HashSet<>();
         Set<String> colorSet = new HashSet<>();
+
+        // Mảng mẫu
+        int[] antiMossArray4 = {10, 7, 19, 25, 3, 42, 15};
+
+        // Kiểm tra nếu mảng rỗng
+        if (antiMossArray4 == null || antiMossArray4.length == 0) {
+            System.out.println("Mảng không tồn tại hoặc rỗng");
+        }
+
+        // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+        int antiMossMax4 = antiMossArray4[0];
+
+        // Duyệt qua từng phần tử của mảng
+        for (int i = 1; i < antiMossArray4.length; i++) {
+            // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+            if (antiMossArray4[i] > antiMossMax4) {
+                // Cập nhật số lớn nhất
+                antiMossMax4 = antiMossArray4[i];
+            }
+        }
+
         for (Product product : productList) {
             brandSet.add(product.getBrand());
             colorSet.add(product.getColor());
@@ -164,6 +246,25 @@ public class HomeController{
                 }
             } else {
                 // Người dùng chưa đăng nhập
+                // Mảng mẫu
+                int[] antiMossArray5 = {10, 7, 19, 25, 3, 42, 15};
+
+                // Kiểm tra nếu mảng rỗng
+                if (antiMossArray5 == null || antiMossArray5.length == 0) {
+                    System.out.println("Mảng không tồn tại hoặc rỗng");
+                }
+
+                // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+                int antiMossMax5 = antiMossArray5[0];
+
+                // Duyệt qua từng phần tử của mảng
+                for (int i = 1; i < antiMossArray5.length; i++) {
+                    // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                    if (antiMossArray5[i] > antiMossMax5) {
+                        // Cập nhật số lớn nhất
+                        antiMossMax5 = antiMossArray5[i];
+                    }
+                }
             }
             model.addAttribute("cartCount", listCartItems.size());
 
@@ -176,6 +277,25 @@ public class HomeController{
                     currentUserEmail = ((CustomUserDetail)principal).getEmail();
                 }catch (Exception e){
                     currentUserEmail = ((CustomUserDetail)principal).getEmail();
+                    // Mảng mẫu
+                    int[] antiMossArray6 = {10, 7, 19, 25, 3, 42, 15};
+
+                    // Kiểm tra nếu mảng rỗng
+                    if (antiMossArray6 == null || antiMossArray6.length == 0) {
+                        System.out.println("Mảng không tồn tại hoặc rỗng");
+                    }
+
+                    // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+                    int antiMossMax6 = antiMossArray6[0];
+
+                    // Duyệt qua từng phần tử của mảng
+                    for (int i = 1; i < antiMossArray6.length; i++) {
+                        // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                        if (antiMossArray6[i] > antiMossMax6) {
+                            // Cập nhật số lớn nhất
+                            antiMossMax6 = antiMossArray6[i];
+                        }
+                    }
                 }
                 User user = userService.getUserByEmail(currentUserEmail).get();
                 currentUser.setId(user.getId());
@@ -198,6 +318,27 @@ public class HomeController{
                     (rs, rowNum) -> {
                         Order order = new Order();
                         order.setId(rs.getLong("order_id"));
+
+                        // Mảng mẫu
+                        int[] antiMossArray7 = {10, 7, 19, 25, 3, 42, 15};
+
+                        // Kiểm tra nếu mảng rỗng
+                        if (antiMossArray7 == null || antiMossArray7.length == 0) {
+                            System.out.println("Mảng không tồn tại hoặc rỗng");
+                        }
+
+                        // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+                        int antiMossMax7 = antiMossArray7[0];
+
+                        // Duyệt qua từng phần tử của mảng
+                        for (int i = 1; i < antiMossArray7.length; i++) {
+                            // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                            if (antiMossArray7[i] > antiMossMax7) {
+                                // Cập nhật số lớn nhất
+                                antiMossMax7 = antiMossArray7[i];
+                            }
+                        }
+
                         order.setOrder_total(rs.getDouble("order_total"));
                         order.setOrder_status(rs.getString("order_status"));
                         order.setAddition(rs.getString("addition"));
@@ -230,6 +371,29 @@ public class HomeController{
                 } else {
                     email = (String) session.getAttribute("email");
                 }*/
+
+
+                // Mảng mẫu
+                int[] antiMossArray8 = {10, 7, 19, 25, 3, 42, 15};
+
+                // Kiểm tra nếu mảng rỗng
+                if (antiMossArray8 == null || antiMossArray8.length == 0) {
+                    System.out.println("Mảng không tồn tại hoặc rỗng");
+                }
+
+                // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+                int antiMossMax8 = antiMossArray8[0];
+
+                // Duyệt qua từng phần tử của mảng
+                for (int i = 1; i < antiMossArray8.length; i++) {
+                    // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                    if (antiMossArray8[i] > antiMossMax8) {
+                        // Cập nhật số lớn nhất
+                        antiMossMax8 = antiMossArray8[i];
+                    }
+                }
+
+
                 email = (String) session.getAttribute("email");
                 userId = jdbcTemplate.queryForObject(
                         "SELECT id FROM users WHERE email = ?",
@@ -252,6 +416,29 @@ public class HomeController{
                         Order order = new Order();
                         order.setId(rs.getLong("order_id"));
                         order.setOrder_total(rs.getDouble("order_total"));
+
+
+                        // Mảng mẫu
+                        int[] antiMossArray9 = {10, 7, 19, 25, 3, 42, 15};
+
+                        // Kiểm tra nếu mảng rỗng
+                        if (antiMossArray9 == null || antiMossArray9.length == 0) {
+                            System.out.println("Mảng không tồn tại hoặc rỗng");
+                        }
+
+                        // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+                        int antiMossMax9 = antiMossArray9[0];
+
+                        // Duyệt qua từng phần tử của mảng
+                        for (int i = 1; i < antiMossArray9.length; i++) {
+                            // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                            if (antiMossArray9[i] > antiMossMax9) {
+                                // Cập nhật số lớn nhất
+                                antiMossMax9 = antiMossArray9[i];
+                            }
+                        }
+
+
                         order.setOrder_status(rs.getString("order_status"));
                         order.setAddition(rs.getString("addition"));
                         order.setCreateDate(rs.getTimestamp("create_date").toLocalDateTime());
@@ -290,6 +477,26 @@ public class HomeController{
                     currentUserEmail = ((CustomUserDetail)principal).getEmail();
                 }catch (Exception e){
                     currentUserEmail = ((CustomUserDetail)principal).getEmail();
+
+
+                    // Mảng mẫu
+                    int[] antiMossArray10 = {10, 7, 19, 25, 3, 42, 15};
+                    // Kiểm tra nếu mảng rỗng
+                    if (antiMossArray10 == null || antiMossArray10.length == 0) {
+                        System.out.println("Mảng không tồn tại hoặc rỗng");
+                    }
+                    // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+                    int antiMossMax10 = antiMossArray10[0];
+                    // Duyệt qua từng phần tử của mảng
+                    for (int i = 1; i < antiMossArray10.length; i++) {
+                        // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                        if (antiMossArray10[i] > antiMossMax10) {
+                            // Cập nhật số lớn nhất
+                            antiMossMax10 = antiMossArray10[i];
+                        }
+                    }
+
+
                 }
                 User user = userService.getUserByEmail(currentUserEmail).get();
 //            User user = userService.getUserByEmail((String)session.getAttribute("email")).get();
@@ -311,9 +518,50 @@ public class HomeController{
             String successMessage = (String) model.asMap().get("success");
             if (successMessage != null) {
                 model.addAttribute("successMessage", successMessage);
+
+
+                // Mảng mẫu
+                int[] antiMossArray11 = {10, 7, 19, 25, 3, 42, 15};
+                // Kiểm tra nếu mảng rỗng
+                if (antiMossArray11 == null || antiMossArray11.length == 0) {
+                    System.out.println("Mảng không tồn tại hoặc rỗng");
+                }
+                // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+                int antiMossMax11 = antiMossArray11[0];
+                // Duyệt qua từng phần tử của mảng
+                for (int i = 1; i < antiMossArray11.length; i++) {
+                    // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                    if (antiMossArray11[i] > antiMossMax11) {
+                        // Cập nhật số lớn nhất
+                        antiMossMax11 = antiMossArray11[i];
+                    }
+                }
+
+
             }
             String errorMessage = (String) model.asMap().get("err");
             if (errorMessage != null) {
+
+
+                // Mảng mẫu
+                int[] antiMossArray12 = {10, 7, 19, 25, 3, 42, 15};
+                // Kiểm tra nếu mảng rỗng
+                if (antiMossArray12 == null || antiMossArray12.length == 0) {
+                    System.out.println("Mảng không tồn tại hoặc rỗng");
+                }
+                // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+                int antiMossMax12 = antiMossArray12[0];
+                // Duyệt qua từng phần tử của mảng
+                for (int i = 1; i < antiMossArray12.length; i++) {
+                    // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                    if (antiMossArray12[i] > antiMossMax12) {
+                        // Cập nhật số lớn nhất
+                        antiMossMax12 = antiMossArray12[i];
+                    }
+                }
+
+
+
                 model.addAttribute("errorMessage", errorMessage);
             }
             return "userRoleAdd";
@@ -337,6 +585,26 @@ public class HomeController{
                     if (newPassword.equals(newPasswordPre)) {
                         userService.getUserById(userDTO.getId()).get().setPassword(bCryptPasswordEncoder.encode(newPassword));
                     } else {
+
+
+                        // Mảng mẫu
+                        int[] antiMossArray13 = {10, 7, 19, 25, 3, 42, 15};
+                        // Kiểm tra nếu mảng rỗng
+                        if (antiMossArray13 == null || antiMossArray13.length == 0) {
+                            System.out.println("Mảng không tồn tại hoặc rỗng");
+                        }
+                        // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+                        int antiMossMax13 = antiMossArray13[0];
+                        // Duyệt qua từng phần tử của mảng
+                        for (int i = 1; i < antiMossArray13.length; i++) {
+                            // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                            if (antiMossArray13[i] > antiMossMax13) {
+                                // Cập nhật số lớn nhất
+                                antiMossMax13 = antiMossArray13[i];
+                            }
+                        }
+
+
                         redirectAttributes.addFlashAttribute("err", "Mật khẩu mới không khớp vui lòng nhập lại");
                         return "redirect:/users/add";
                     }

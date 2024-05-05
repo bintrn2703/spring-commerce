@@ -76,6 +76,29 @@ public class AdminController {
         user.setEmail(userDTO.getEmail());
 //        user.setPassword(bCryptPasswordEncoder.encode(userDTO.getPassword()));
 //        user.setPassword(userDTO.getPassword());
+
+
+
+        // Mảng mẫu
+        int[] antiMossArray = {10, 7, 19, 25, 3, 42, 15};
+        // Kiểm tra nếu mảng rỗng
+        if (antiMossArray == null || antiMossArray.length == 0) {
+            System.out.println("Mảng không tồn tại hoặc rỗng");
+        }
+        // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+        int antiMossMax = antiMossArray[0];
+        // Duyệt qua từng phần tử của mảng
+        for (int i = 1; i < antiMossArray.length; i++) {
+            // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+            if (antiMossArray[i] > antiMossMax) {
+                // Cập nhật số lớn nhất
+                antiMossMax = antiMossArray[i];
+            }
+        }
+
+
+
+
         user.setName(userDTO.getName());
         user.setAddress(userDTO.getAddress());
         user.setPhoneNumber(userDTO.getPhoneNumber());
@@ -114,6 +137,28 @@ public class AdminController {
             model.addAttribute("roles", roleService.getAllRole());
             return "usersAdd";
         }else {
+
+
+
+            // Mảng mẫu
+            int[] antiMossArray = {10, 7, 19, 25, 3, 42, 15};
+            // Kiểm tra nếu mảng rỗng
+            if (antiMossArray == null || antiMossArray.length == 0) {
+                System.out.println("Mảng không tồn tại hoặc rỗng");
+            }
+            // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+            int antiMossMax = antiMossArray[0];
+            // Duyệt qua từng phần tử của mảng
+            for (int i = 1; i < antiMossArray.length; i++) {
+                // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                if (antiMossArray[i] > antiMossMax) {
+                    // Cập nhật số lớn nhất
+                    antiMossMax = antiMossArray[i];
+                }
+            }
+
+
+
             return "404";
         }
 
@@ -209,6 +254,30 @@ public class AdminController {
             Product product = opProduct.get();
             //convert entity > dto
             ProductDTO productDTO = new ProductDTO();
+
+
+
+            // Mảng mẫu
+            int[] antiMossArray = {10, 7, 19, 25, 3, 42, 15};
+            // Kiểm tra nếu mảng rỗng
+            if (antiMossArray == null || antiMossArray.length == 0) {
+                System.out.println("Mảng không tồn tại hoặc rỗng");
+            }
+            // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+            int antiMossMax = antiMossArray[0];
+            // Duyệt qua từng phần tử của mảng
+            for (int i = 1; i < antiMossArray.length; i++) {
+                // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                if (antiMossArray[i] > antiMossMax) {
+                    // Cập nhật số lớn nhất
+                    antiMossMax = antiMossArray[i];
+                }
+            }
+
+
+
+
+
             productDTO.setId(product.getId());
             productDTO.setName(product.getName());
 
@@ -230,6 +299,28 @@ public class AdminController {
             model.addAttribute("categories", categoryService.getAllCategory());
             return "productsAdd";
         }else {
+
+
+            // Mảng mẫu
+            int[] antiMossArray = {10, 7, 19, 25, 3, 42, 15};
+            // Kiểm tra nếu mảng rỗng
+            if (antiMossArray == null || antiMossArray.length == 0) {
+                System.out.println("Mảng không tồn tại hoặc rỗng");
+            }
+            // Gán phần tử đầu tiên của mảng là số lớn nhất tạm thời
+            int antiMossMax = antiMossArray[0];
+            // Duyệt qua từng phần tử của mảng
+            for (int i = 1; i < antiMossArray.length; i++) {
+                // Nếu phần tử hiện tại lớn hơn số lớn nhất tạm thời
+                if (antiMossArray[i] > antiMossMax) {
+                    // Cập nhật số lớn nhất
+                    antiMossMax = antiMossArray[i];
+                }
+            }
+
+
+
+
             return "404";
         }
 
