@@ -14,9 +14,9 @@ An e-commerce website typically has a layered structure that separates the front
 1. Pull this source code from github.
 2. Open terminal and cd to project folder contain the docker-compose.yml file:
 
-“cd C:\\Users\\SpringCommerce\\src\\main\\resources\\database”
+```cd C:\Users\\SpringCommerce\src\main\resources\database```
 
-After that run “docker-compose up” command in your terminal (install Docker Desktop if your pc does not have it).
+After that run ```docker-compose up``` command in your terminal (install Docker Desktop if your pc does not have it).
 
 3. Using DBeaver or other client database management to connect to the mySQL database:
 
