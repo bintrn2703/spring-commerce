@@ -1,0 +1,22 @@
+version: '3.6'
+
+services:
+  product-server:
+    image: 'postgres:13.1-alpine'
+    container_name: product-server
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=sa
+      - POSTGRES_PASSWORD=abc123
+      - POSTGRES_DB=ProductManagement
+  phone_factory:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=PhoneFactory
+      - MYSQL_ROOT_PASSWORD=abc123
+    ports:
+      - '3306:3306'

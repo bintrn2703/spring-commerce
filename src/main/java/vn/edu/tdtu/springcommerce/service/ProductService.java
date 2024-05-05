@@ -17,6 +17,8 @@ public interface ProductService {
 
 	Product addOrUpdateProduct(Product product);
 
+	Product save(Product product);
+
 	List<Product> getAllProduct();
 
 	List<Product> searchByManyCondition(String category, String name,String brand,Double minPrice,Double maxPrice,String color);

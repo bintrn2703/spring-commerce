@@ -194,7 +194,7 @@ public class AdminController {
         }//save image
         product.setImageName(imageUUID);
 
-        productService.addOrUpdateProduct(product);
+        productService.save(product);
         return "redirect:/admin/products";
     }//form add new product > do add
     @GetMapping("/admin/products/delete/{id}")

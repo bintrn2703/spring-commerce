@@ -63,8 +63,7 @@ public class HomeController{
         String email = "";
         List<CartItem> listCartItems = new ArrayList<>();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null && authentication.isAuthenticated() && !(authentication instanceof AnonymousAuthenticationToken)) {
-            // Người dùng đã đăng nhập
+        if (authentication != null && authentication.isAuthenticated() && !(authentication instanceof AnonymousAuthenticationToken)) {// Người dùng đã đăng nhập
             /*if (authentication instanceof OAuth2AuthenticationToken) {
                 OAuth2AuthenticationToken oauthToken = (OAuth2AuthenticationToken) authentication;
                 email = oauthToken.getPrincipal().getAttributes().get("email").toString();

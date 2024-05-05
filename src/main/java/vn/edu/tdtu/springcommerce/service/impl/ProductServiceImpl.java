@@ -46,6 +46,11 @@ public class ProductServiceImpl implements ProductService{
     }//add or update (tuy vao pri-key)
 
     @Override
+    public Product save(Product product) {
+        return productRepository.save(product);
+    }
+
+    @Override
     public boolean removeProductById(Long id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
         if (optionalProduct.isPresent()) {

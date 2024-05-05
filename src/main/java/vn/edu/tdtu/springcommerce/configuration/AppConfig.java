@@ -43,28 +43,5 @@ public class AppConfig {
         return new JdbcTemplate(dataSource);
     }
 
-//    @Bean
-//    public Properties jpaProperties() {
-//        Properties properties = new Properties();
-//        properties.setProperty("hibernate.hbm2ddl.auto", "update");
-//        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-//        properties.setProperty("hibernate.show_sql", "true");
-//        properties.setProperty("hibernate.format_sql", "true");
-//        return properties;
-//    }
-//    @Bean
-//    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-//        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-//        em.setDataSource(dataSource());
-//        em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-//        em.setJpaProperties(jpaProperties());
-//        return em;
-//    }
-//    @Bean
-//    public PlatformTransactionManager transactionManager() {
-//        JpaTransactionManager transactionManager = new JpaTransactionManager();
-//        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
-//        return transactionManager;
-//    }
 }
 
