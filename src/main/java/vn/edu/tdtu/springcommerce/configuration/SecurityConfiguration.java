@@ -111,7 +111,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 //permit all url
                 .authorizeRequests()
-                .antMatchers("/api/products/**","/api/**").permitAll() // cho phép truy cập vào tất cả các API trong "/api/products"
+                .antMatchers("/api/products/**","/api/**","/api","/","/**").permitAll() // cho phép truy cập vào tất cả các API trong "/api/products"
                 .antMatchers("/api/carts/**").permitAll() // cho phép truy cập vào tất cả các API trong "/api/"
                 .antMatchers("/", "/shop/**", "/forgotpassword", "/register", "/login").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
